@@ -12,4 +12,4 @@ def printLinkedList(head):
     
     while head != None:
         print(int(head.data))
-        head = head.next
+        head = head.next  
