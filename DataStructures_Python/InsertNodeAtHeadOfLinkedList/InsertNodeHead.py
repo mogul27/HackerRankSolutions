@@ -10,7 +10,7 @@
 #     SinglyLinkedListNode next
 #
 #
-# The head is the back of the lisr
+# The head is the back of the list
 def insertNodeAtHead(llist, data):
     node = SinglyLinkedListNode(data)
     node.next = llist
