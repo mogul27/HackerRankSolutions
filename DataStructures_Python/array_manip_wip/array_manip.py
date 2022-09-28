@@ -1,5 +1,8 @@
 ##### This is a work in progress - need to learn about prefix sums before attempting to get all cases passing -> there is a weird edge case
+## Prefix summing, steps and falls -> will complete easier ones and come back for this
 
+
+#!/bin/python3
 
 import math
 import os
@@ -16,21 +19,18 @@ import sys
 #  2. 2D_INTEGER_ARRAY queries
 #
 
-def arrayManipulation(n, queries):
+def arrayManipulation(n:int, queries:list):
     
     # Create 1-indexed array of 0s
     row = [0 for i in range(n)]
     
     for query in queries:
-        start = query[0]
-        stop = query[1]
-        addition = query[2]
+        to_change = range(query[0]-1, query[1])
         
-        add_row = [0 for i in range(n)]
-        add_row[start-1:stop-1] =  [addition] * (stop+1-start)
-        row = [sum(x) for x in zip(row, add_row)]
-        print(row)
-        
+        for index in to_change:
+            row[index] = row[index] + query[2]
+    
+    print(row)
     return max(row)
     
         
